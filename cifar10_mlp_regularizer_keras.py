@@ -25,13 +25,13 @@ model_base.add(Dense(512, activation='relu'))
 model_base.add(Dense(256, activation='relu'))
 model_base.add(Dense(128, activation='relu'))
 model_base.add(Dense(64, activation='relu'))
-model_base.add(Dense(10, activation='softmax')) #bcoz we have 100 classes
+model_base.add(Dense(10, activation='softmax')) #bcoz we have 10 classes; no of layers/neurons here is the number of classes
 
 # Compile
 model_base.compile(optimizer = Adam(learning_rate=0.001), loss = 'categorical_crossentropy', metrics = ['accuracy'])
 
 # Train
-result_1 = model_base.fit(x_train, y_train, epochs=10, batch_size=128, validation_split=0.2)
+result_1 = model_base.fit(x_train, y_train, epochs=30, batch_size=128, validation_split=0.2)
 
 # Evaluate
 test_loss, test_accuracy = model_base.evaluate(x_test, y_test)
@@ -52,13 +52,13 @@ model_le_4.add(Dense(512, activation='relu', kernel_regularizer=regularizer.l2(1
 model_le_4.add(Dense(256, activation='relu', kernel_regularizer=regularizer.l2(1e-4)))
 model_le_4.add(Dense(128, activation='relu', kernel_regularizer=regularizer.l2(1e-4)))
 model_le_4.add(Dense(64, activation='relu', kernel_regularizer=regularizer.l2(1e-4)))
-model_le_4.add(Dense(10, activation='softmax')) #bcoz we have 100 classes
+model_le_4.add(Dense(10, activation='softmax')) #bcoz we have 10 classes
 
 # Compile
 model_le_4.compile(optimizer = Adam(learning_rate=0.001), loss = 'categorical_crossentropy', metrics = ['accuracy'])
 
 # Train
-result_2 = model_le_4.fit(x_train, y_train, epochs=10, batch_size=128, validation_split=0.2)
+result_2 = model_le_4.fit(x_train, y_train, epochs=30, batch_size=128, validation_split=0.2)
 
 # Evaluate
 test_loss, test_accuracy = model_le_4.evaluate(x_test, y_test)
@@ -79,13 +79,13 @@ model_le_2.add(Dense(512, activation='relu', kernel_regularizer=regularizer.l2(1
 model_le_2.add(Dense(256, activation='relu', kernel_regularizer=regularizer.l2(1e-4)))
 model_le_2.add(Dense(128, activation='relu', kernel_regularizer=regularizer.l2(1e-4)))
 model_le_2.add(Dense(64, activation='relu', kernel_regularizer=regularizer.l2(1e-4)))
-model_le_2.add(Dense(10, activation='softmax')) #bcoz we have 100 classes
+model_le_2.add(Dense(10, activation='softmax')) #bcoz we have 10 classes
 
 # Compile
 model_le_2.compile(optimizer = Adam(learning_rate=0.001), loss = 'categorical_crossentropy', metrics = ['accuracy'])
 
 # Train
-result_3 = model_le_2.fit(x_train, y_train, epochs=10, batch_size=128, validation_split=0.2)
+result_3 = model_le_2.fit(x_train, y_train, epochs=30, batch_size=128, validation_split=0.2)
 
 # Evaluate
 test_loss, test_accuracy = model_le_2.evaluate(x_test, y_test)
